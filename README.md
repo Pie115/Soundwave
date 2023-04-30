@@ -2,7 +2,7 @@ This is a music recommender made for Citrus Hack 2023
 
 ## Sound Wave
 
-Have you ever felt dissapointed with your music reccomendations. Do you feel that they just reccomend you whatever is popular with your demographic?
+Have you ever felt disapointed with your music recommendations. Do you feel that they just recommend you whatever is popular with your demographic?
 
 Well no more. Introducing sound wave, a deep neural clustering strategy designed to give you music which matches your tastes in musical structure in style. 
 
