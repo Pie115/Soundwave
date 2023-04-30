@@ -15,7 +15,9 @@ def ConvertWav(songname):
     
 
 def GetSongs(link):
-    os.system(link)    
+    
+    command = 'spotdl '
+    os.system(command + link)    
 
     p = os.listdir()
     for i in p:
@@ -33,4 +35,4 @@ def GetSongs(link):
         ConvertWav(i)
         os.remove(i)
 
-#GetSongs(linktoplaylist/songs)
+#GetSongs(linktosong/playlist)
