@@ -1,6 +1,6 @@
 This is a music recommender made for Citrus Hack 2023
 
-## Sound Wave
+## Soundwave
 
 Have you ever felt disapointed with your music recommendations. Do you feel that they just recommend you whatever is popular with your demographic?
 
