@@ -60,7 +60,7 @@ def results(request):
     CALL FUNCTIONS FOR RESULTS HERE AND STORE IN OUTPUT
     '''
     context = {
-        "final_results:"
+        "final_results":output
 
     }
 
