@@ -13,14 +13,22 @@
 
 	<form action="/frontend_code/" method="post">
 		{% csrf_token %}
-		<label for="your_name">Your name: </label>
+		<label for="your_name">Song to Add: </label>
 		<input id="your_name" type="text" name="your_name">
 		<input type="submit" value="Add to Playlist">
 	</form>
 
 	
-	
 	<a href = "{% url 'reset_list' %}">Clear List</a>
+
+	{% if list|length > 19 %}
+		<h2><a href = "{% url 'results' %}"> Click here to get your results!</a></h2>
+	{% else %}
+		<h3>Please enter at least 20 songs you enjoy to recieve your results</h3>
+	{% endif %}
+
+
+
 
 
 
@@ -31,8 +39,8 @@
 		create new application and new views for each view, try this solution
 
 	-->
-	<h4>List is </h4>
-	<ul>
+	<h4>Songs Added </h4>
+	<ol>
 	{% for i in list %}
 	<li>{{ i }}</li>
 	{% endfor %}

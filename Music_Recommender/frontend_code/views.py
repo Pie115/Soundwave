@@ -49,9 +49,12 @@ def reset_list(request):
     # return response with template and context
     return render(request, "template.html", context)
 
+def results(request):
+    return render(request, "song_output.html", {})
 
 
-    # return render(request, "song_output.html", {})
+
+
 # create a dictionary to pass
     # # data to the template
     # if len(values) > 0:
