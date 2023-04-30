@@ -50,7 +50,17 @@ def reset_list(request):
     return render(request, "template.html", context)
 
 def results(request):
-    return render(request, "song_output.html", {})
+    output = []
+    '''
+    CALL FUNCTIONS FOR RESULTS HERE AND STORE IN OUTPUT
+    '''
+    context = {
+        "final_results:"
+
+    }
+
+
+    return render(request, "song_output.html", context)
 
 
 

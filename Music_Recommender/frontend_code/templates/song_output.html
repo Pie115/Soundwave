@@ -9,6 +9,12 @@
 <body>
 	<h1>Here is Your Selection!.</h1>
 
+	<h4>Results: </h4>
+	<ol>
+	{% for i in final_results %}
+	<li>{{ i }}</li>
+	{% endfor %}
+
 
 
 		<!-- add button to clear list, and then make link to second page to output song lists
