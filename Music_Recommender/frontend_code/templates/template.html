@@ -7,7 +7,9 @@
 	<title>Homepage</title>
 </head>
 <body>
-	<h1>Welcome to Our Music Selector.</h1>
+	<h1>Welcome to Our Music recommender.</h1>
+
+
 
 	<form action="/frontend_code/" method="post">
 		{% csrf_token %}
@@ -16,16 +18,19 @@
 		<input type="submit" value="Add to Playlist">
 	</form>
 
-	<a href="{% url 'new_view' %}">Clear List</a>
+	
+	
+	<a href = "{% url 'reset_list' %}">Clear List</a>
+
+
 
 
 	<!-- 
 		add button to clear list, and then make link to second page to output song lists
+
+		create new application and new views for each view, try this solution
+
 	-->
-	
-
-
-<p> Data is {{ data }}</p>
 	<h4>List is </h4>
 	<ul>
 	{% for i in list %}

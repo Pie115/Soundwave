@@ -2,9 +2,9 @@ from django.urls import path
 
 # from .views import geeks_view
 
-from .views import *
+from . import views
 
 urlpatterns = [
-    path("", geeks_view, name="geeks_view"),
-    path("", new_view, name = "new_view"),
+    path("", views.selector_page, name="selector_page"),
+    path("results/", views.reset_list, name = "reset_list"),
 ]
