@@ -7,38 +7,48 @@
 
 	{% load static %}
 	<link href="{% static './css/home_page.css' %}" rel="stylesheet" />
+	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+
 	<title>Homepage</title>
 </head>
 <body>
-	<h1>Welcome to Sound Wave!</h1>
 
-	<form action="/frontend_code/" method="POST" class = "searchBar">
-		{% csrf_token %}
-		<label for="your_name">Song to Add: </label>
-		<input id="your_name" type="text" name="your_name" placeholder="Search by Title">
-		<input type="submit" value="Add to Playlist">
-	</form>
-	
-	<a href = "{% url 'reset_list' %}">Clear List</a>
-	<a href = "{% url 'database' %}">List of Valid Songs</a>
+
+	<!-- <div class = "logo"> -->
+		{% load static %} <img src="{% static 'BigLogo.jpg' %}" alt="Website Logo" />		
+	<!-- </div> -->
 
 
 
-	{%if bad_songName == True %}
-		<h4>Invalid Songname! Please try another input</h4>
-	{%endif%}
+	<div class = "searchBar">
+		<form action="/frontend_code/" method="POST" class = "searchBar" autocomplete="off">
+			{% csrf_token %}
+			<!-- <label for="your_name">Song to Add: </label> -->
+			<input id="your_name" type="text" name="your_name" placeholder="Search by Title">
+			<input type="submit" value="Add to Playlist">
+		</form>
+		<a href = "{% url 'reset_list' %}">Clear List</a>
+		<a href = "{% url 'database' %}">List of Valid Songs</a>
+	</div>
 
-	{% if list|length > 0 %}
-		<h2><a href = "{% url 'results' %}"> Click here to get your results!</a></h2>
-	{% else %}
-		<h3>Please enter a song you enjoy to recieve your results.</h3>
-	{% endif %}
+	<div class = "otherStuff">
 
 
-	<h4>Songs Added </h4>
-	<ol>
-	{% for i in list %}
-	<li>{{ i }}</li>
-	{% endfor %}
+		{%if bad_songName == True %}
+			<h4>Invalid Songname! Please try another input</h4>
+		{%endif%}
+
+		{% if list|length > 0 %}
+			<h2><a href = "{% url 'results' %}"> Click here to get your results!</a></h2>
+		{% else %}
+			<h3>Please enter a song you enjoy to recieve your results.</h3>
+		{% endif %}
+
+
+		<h4>Songs Added </h4>
+		{% for i in list %}
+		<p>{{ i }}</p>
+		{% endfor %}
+	</div>
 </body>
 </html>

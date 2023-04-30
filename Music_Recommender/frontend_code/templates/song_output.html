@@ -4,15 +4,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Homepage</title>
+
+	{% load static %}
+	<link href="{% static './css/output.css' %}" rel="stylesheet" />
+	<title>Results</title>
 </head>
 <body>
 	<h1>Here is Your Selection!.</h1>
-    <a href = "{% url 'selector_page' %}">Go Back</a>
+    <a href = "{% url 'selector_page' %}"><button>Go Back</button></a>
 
 
 
-	<h4>Results: </h4>
+	<h4>Results</h4>
 	<ol>
 	{% for i in final_results %}
 	<li>{{ i }}</li>

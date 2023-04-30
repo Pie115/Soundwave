@@ -4,15 +4,21 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Homepage</title>
+
+
+	{% load static %}
+	<link href="{% static './css/database.css' %}" rel="stylesheet" />
+	
+	
+	<title>Database</title>
 </head>
 <body>
 	<h1>Database</h1>
-    <a href = "{% url 'selector_page' %}">Go Back</a>
+    <a href = "{% url 'selector_page' %}"><button>Go Back</button></a>
 
 
 	<h4>This is the training set we used. Because of this, our AI can only relate the songs in this database. We recommend
-        using Ctrl+F or Cmd+F on Windows and Mac respectively to see if your song is compatible. 
+        using Ctrl+F or Cmd+F, on Windows and Mac respectively, to see if your song is compatible. 
     </h4>
 	<ol>
 	{% for i in keys %}

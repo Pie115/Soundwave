@@ -3,5 +3,68 @@ h1{
 }   
 
 .searchBar{
+    text-align: center;
     margin: 0 auto;
+
+    /* padding-top: 90px; */
+    padding-bottom: 20px;
+}
+
+.otherStuff{
+    text-align: center;
+    margin: 0 auto;
+}
+
+a{
+    /* border-color: white;
+    border: 3px;
+    border-radius: 10%; */
+    text-decoration: none;
+    /* background-color: grey;
+     */
+    color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-color: white;
+    border-radius: 3px;
+    border-width: 10px;
+
+    
+
+}
+
+h3{
+    padding: 0px;
+
+}
+img{
+    height: 30%;
+    width:30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+body{
+    /* background: linear-gradient(to top left, black, white); */
+    background-color: black;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color:white
+}
+
+input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+input[type=submit] {
+width: 10%;
+padding: 12px 20px;
+margin: 8px 0;
+box-sizing: border-box;
 }

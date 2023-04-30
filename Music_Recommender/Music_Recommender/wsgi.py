@@ -14,3 +14,7 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Music_Recommender.settings')
 
 application = get_wsgi_application()
+
+
+# from Music_Recomender.wsgi import HelloWorldApplication
+# application = HelloWorldApplication(application)

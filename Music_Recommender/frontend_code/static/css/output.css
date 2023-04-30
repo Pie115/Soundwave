@@ -1,0 +1,23 @@
+body{
+    /* background: linear-gradient(to top left, black, white); */
+    background-color: black;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color:white
+}
+
+h1{
+    text-align: center;
+} 
+
+h4{
+    text-decoration: underline;
+    text-align: center;
+}
+
+button{
+    border-radius: 4px;
+    width:90px;
+    height: 30px;
+}
