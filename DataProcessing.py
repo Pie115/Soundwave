@@ -84,8 +84,9 @@ def createZTable(files, PCA = False, nm = None): # GIVEN A SET OF FILES CREATE T
 
 
 def loadZTable(): # LOADS THE Z TABLE GIVEN THAT IT EXISTS
-
-  return pk.load(open("songData.pkl",'rb')).update(pk.load(open("songDataRap.pkl",'rb')))
+  tab  = pk.load(open("songData.pkl",'rb'))
+  tab.update(pk.load(open("songDataRap.pkl",'rb')))
+  return tab
 
 def trainMVN(data):
     
