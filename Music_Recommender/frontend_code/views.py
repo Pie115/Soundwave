@@ -2,14 +2,22 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import NameForm
 
+from .DataProcessing import loadZTable, queryMaximumLikelihood
 
 values = []
   
-test_dict = { 
-    "Dior":"5",
-    "Ddu-Ddu":"2",
-    "Fancy": "4"
-}
+
+
+
+# test_dict = { 
+#     "Dior":"5",
+#     "Ddu-Ddu":"2",
+#     "Fancy": "4"
+# }
+
+test_dict = loadZTable()
+
+
 
 # create a function
 def selector_page(request):
@@ -56,6 +64,15 @@ def reset_list(request):
 
 def results(request):
     output = []
+
+    output = queryMaximumLikelihood(values)[0]
+
+    # inputs value
+
+
+
+
+
     '''
     CALL FUNCTIONS FOR RESULTS HERE AND STORE IN OUTPUT
     '''
