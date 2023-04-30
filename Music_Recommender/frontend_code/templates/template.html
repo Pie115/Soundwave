@@ -4,22 +4,29 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="styles/style.css" rel="stylesheet" />
 	<title>Homepage</title>
 </head>
 <body>
-	<h1>Welcome to Our Music recommender.</h1>
+	<h1>Welcome to Sound Wave!</h1>
+
+	<a href = "{% url 'database' %}">List of Valid Songs</a>
+	
 
 
 
-	<form action="/frontend_code/" method="post">
+	<form action="/frontend_code/" method="POST">
 		{% csrf_token %}
 		<label for="your_name">Song to Add: </label>
-		<input id="your_name" type="text" name="your_name">
+		<input id="your_name" type="text" name="your_name" placeholder="Search by Title">
 		<input type="submit" value="Add to Playlist">
 	</form>
 
 	
 	<a href = "{% url 'reset_list' %}">Clear List</a>
+	{%if bad_songName == True %}
+		<h4>Invalid Songname! Please try another input</h4>
+	{%endif%}
 
 	{% if list|length > 19 %}
 		<h2><a href = "{% url 'results' %}"> Click here to get your results!</a></h2>
@@ -28,17 +35,6 @@
 	{% endif %}
 
 
-
-
-
-
-
-	<!-- 
-		add button to clear list, and then make link to second page to output song lists
-
-		create new application and new views for each view, try this solution
-
-	-->
 	<h4>Songs Added </h4>
 	<ol>
 	{% for i in list %}

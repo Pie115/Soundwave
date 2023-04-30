@@ -5,24 +5,29 @@ from .forms import NameForm
 
 values = []
   
+test_dict = { 
+    "Dior":"5",
+    "Ddu-Ddu":"2",
+    "Fancy": "4"
+}
+
 # create a function
 def selector_page(request):
-    # create a dictionary to pass
-    # data to the template
-    # if len(values) > 0:
-        # del(values[:])
+    bad_songName = False
     if request.method == "POST":
         form = NameForm(request.POST)   
         if form.is_valid():
             cleaned_data = form.cleaned_data
             value = list(cleaned_data.values())[0]
-            values.append(value)
+            if value in test_dict:
+                values.append(value)
+            else:
+                bad_songName = True
+
 
     context ={
-        "data":"Gfg is the best",
         "list": values,
-
-        # "list":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        "bad_songName": bad_songName
     }
     # return response with template and context
     return render(request, "template.html", context)
@@ -61,6 +66,10 @@ def results(request):
 
 
     return render(request, "song_output.html", context)
+
+def valid_songs(request):
+    context = {"keys":test_dict.keys()}
+    return render(request, "database.html", context)
 
 
 
