@@ -67,6 +67,10 @@ def results(request):
 
     return render(request, "song_output.html", context)
 
+def valid_songs(request):
+    context = {"keys":test_dict.keys()}
+    return render(request, "database.html", context)
+
 
 
 
